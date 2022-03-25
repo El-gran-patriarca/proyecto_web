@@ -1,0 +1,41 @@
+body {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: rgb(49, 46, 46);
+}
+header {
+  background-color: rgb(255, 0, 0);
+  color: purple;
+}
+
+.main-header {
+  
+  background-color: rgba(21, 255, 0, 0.37);
+}
+.titulo {
+  font-size-adjust: 1;
+  margin: auto;
+  width: 50%;
+}
+.titulo2 {
+  margin: auto;
+  width: 90%;
+  color: tomato;
+}
+.item {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: green;
+}
+
+.item-gatos{
+  display:flex;
+}
+
+.cuadrado {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+.color_l_bairon {
+  color: rgb(255, 0, 0);
+}
