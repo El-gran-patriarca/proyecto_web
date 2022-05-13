@@ -1,6 +1,5 @@
-
-$(document).ready(function() {
-
+$(document).ready(function () {
+    
     $("input.form-control").on("keypress",
         function (e) {
             if (e.which == 13) {
@@ -16,27 +15,7 @@ $(document).ready(function() {
             // TODO: For last TextField, do nothing
         });
 
-    $('#joinusName').focusout(function() {
-        console.log("Sali del foco")
-
-        if ($('#joinusName')[0].value == '' || $('#joinusName')[0].value == null) {
-            document.getElementsByName("joinusNameAlert")[0].classList.remove('d-none');
-        } else {
-            document.getElementsByName("joinusNameAlert")[0].classList.add('d-none');
-        }
-    })
-
-    $('#joinusApellido').focusout(function() {
-        console.log("Sali del foco")
-
-        if ($('#joinusApellido')[0].value == '' || $('#joinusApellido')[0].value == null) {
-            document.getElementsByName("joinusApellidoAlert")[0].classList.remove('d-none');
-        } else {
-            document.getElementsByName("joinusApellidoAlert")[0].classList.add('d-none');
-        }
-    })
-
-    $('#joinusEmail').focusout(function() {
+    $('#joinusEmail').focusout(function () {
         console.log("Sali del foco")
 
         if ($('#joinusEmail')[0].value == '' || $('#joinusEmail')[0].value == null) {
@@ -46,7 +25,7 @@ $(document).ready(function() {
         }
     })
 
-    $('#joinusPassword').focusout(function() {
+    $('#joinusPassword').focusout(function () {
         console.log("Sali del foco")
 
         if ($('#joinusPassword')[0].value == '' || $('#joinusPassword')[0].value == null) {
@@ -55,10 +34,10 @@ $(document).ready(function() {
             document.getElementsByName("joinusPasswordAlert")[0].classList.add('d-none');
         }
     })
-    
-    $('#joinus').submit(function(event) {
+
+    $('#joinus').submit(function (event) {
         console.log("Formulario enviado")
         event.preventDefault();
     });
-    
-});    
+
+});        
