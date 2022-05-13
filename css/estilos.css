@@ -156,7 +156,7 @@ main .sobre-nosotros {
     display: block;
 }
 
-.imagen-port:hover{
+.imagen-port:hover {
     z-index: 1000;
 
 
@@ -224,8 +224,6 @@ main .sobre-nosotros {
     font-weight: 300;
     padding-top: 5px;
 }
-
-/*  Our team */
 
 .about-services {
     background: #f2f2f2;
@@ -296,6 +294,11 @@ footer {
     font-size: 24px;
     margin: 20px 0 0 0;
     color: #9e9797;
+}
+
+.clim {
+    width: 100% !important;
+    height: 800px;
 }
 
 @media screen and (max-width:900px) {
