@@ -151,9 +151,15 @@ main .sobre-nosotros {
 
 .imagen-port>img {
     width: 100%;
-    height: 100%;
+    height: 200px;
     object-fit: cover;
     display: block;
+}
+
+.imagen-port:hover{
+    z-index: 1000;
+
+
 }
 
 .hover-galeria {
@@ -236,6 +242,7 @@ main .sobre-nosotros {
 .servicio-ind {
     width: 20%;
     text-align: center;
+    align-self: baseline;
 }
 
 .servicio-ind img {
