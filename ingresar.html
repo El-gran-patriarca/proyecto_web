@@ -70,22 +70,16 @@
                 <div class="card border-0 shadow rounded-3 my-5">
                     <div class="card-body p-4 p-sm-5">
                         <h5 class="card-title text-center mb-5 fw-light fs-5">Ingresa tus datos</h5>
-                        <form name="joinus" id="joinus">
+                        <form>
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" name="email" id="joinusEmail"
-                                    placeholder="Correo" tabIndex="1" required>
-                                <label for="joinusEmail">Hola@correo.com</label>
-                                <div class="alert alert-danger d-none" role="alert" name="joinusEmailAlert">
-                                    Debes rellenar el Correo
-                                </div>
+                                <input type="email" class="form-control" id="floatingInput"
+                                    placeholder="name@example.com">
+                                <label for="floatingInput">Correo electrónico</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" name="Password" id="joinusPassword"
-                                    placeholder="Password" tabIndex="2" required>
-                                <label for="joinusPassword">Contraseña</label>
-                                <div class="alert alert-danger d-none" role="alert" name="joinusPasswordAlert">
-                                    Debes rellenar la Contraseña
-                                </div>
+                                <input type="password" class="form-control" id="floatingPassword"
+                                    placeholder="Password">
+                                <label for="floatingPassword">Contraseña</label>
                             </div>
 
                             <div class="form-check mb-3">
@@ -95,7 +89,7 @@
                                 </label>
                             </div>
                             <div class="d-grid">
-                                <button id="bnt-iniciar"class="btn btn-primary btn-login text-uppercase fw-bold" type="submit" tabIndex="3">Iniciar
+                                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Iniciar
                                     sesión</button>
                             </div>
                             <hr class="my-4">
@@ -134,9 +128,6 @@
         </div>
         <h2 class="titulo-final"></h2>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="./js/ingresar.js"></script>
-
 </body>
 
 </html>
