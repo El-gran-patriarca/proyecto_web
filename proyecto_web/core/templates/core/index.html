@@ -1,5 +1,7 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="es">
+<html>
 
 
 <head>
@@ -9,8 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GROW JARDINERIA</title>
-    <link rel="shortcut icon" href="img/icono.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="shortcut icon" href= "{% static 'core/img/icono.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/css/ol.css" type="text/css">
@@ -22,7 +24,7 @@
     <!--barra de navegacion-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="img/icono.png" alt="" height="40px"></a>
+            <a class="navbar-brand" href="static/core/index.html"><img src="{% static 'core/img/icono.png' %}" alt="" height="40px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true"
                 aria-label="Toggle navigation">
@@ -31,7 +33,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active h4" aria-current="page" href="index.html">Inicio</a>
+                        <a class="nav-link active h4" aria-current="page" href="{% static 'core/index.html'%}">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"></a>
@@ -47,9 +49,9 @@
     <!--barra de navegacion-->
     <header>
         <nav>
-            <a href="ingresar.html">Ingresar</a>
-            <a href="carrito.html" class="btn-carrito">
-                <img src="img/carretilla.png" alt="" class="carrito" height="50px" width="50px " />
+            <a href="{% static 'core/ingresar.html'%}">Ingresar</a>
+            <a href="{% static 'core/carrito.html'%}" class="btn-carrito">
+                <img src="{% static 'core/img/carretilla.png' %}" alt="" class="carrito" height="50px" width="50px " />
             </a>
 
         </nav>
@@ -74,7 +76,7 @@
                 <!-- <div id="prod-principal" class="imagen-about-us">
                     <img src="img/los mejores productos.webp" alt="" style="width: 100%;">
                 </div> -->
-                <img id="prod-principal" src="img/los mejores productos.webp" alt="" class="imagen-about-us">
+                <img id="prod-principal" src="{% static 'core/img/los mejores productos.webp' %}" alt="" class="imagen-about-us">
                 <div class="contenido-textos">
                     <h3><span>1</span>Macetero Biodegradable Actual Blanco</h3>
                     <p>Macetero de bamboo y resina biodegradable, perfectos para
@@ -92,56 +94,56 @@
                 <h2 class="titulo">Productos destacados</h2>
                 <div class="galeria-port">
                     <div class="imagen-port js-tilt">
-                        <img src="img/img1.jpg" alt="">
+                        <img src="{% static 'core/img/img1.jpg' %}" alt="">
                         <!-- <div class="hover-galeria">
                             <img src="img/lupa.png" alt="">
                             <p>Nuestro trabajo</p>
                         </div> -->
                     </div>
                     <div class="imagen-port js-tilt">
-                        <img src="img/img2.jpg" alt="">
+                        <img src="{% static 'core/img/img2.jpg' %}" alt="">
                         <!-- <div class="hover-galeria">
                             <img src="img/lupa.png" alt="">
                             <p>Nuestro trabajo</p>
                         </div> -->
                     </div>
                     <div class="imagen-port js-tilt">
-                        <img src="img/img3.jpg" alt="">
+                        <img src="{% static 'core/img/img3.jpg' %}" alt="">
                         <!-- <div class="hover-galeria">
                             <img src="img/lupa.png" alt="">
                             <p>Nuestro trabajo</p>
                         </div> -->
                     </div>
                     <div class="imagen-port js-tilt">
-                        <img src="img/img4.jpg" alt="">
+                        <img src="{% static 'core/img/img4.jpg' %}" alt="">
                         <!-- <div class="hover-galeria">
                             <img src="img/lupa.png" alt="">
                             <p>Nuestro trabajo</p>
                         </div> -->
                     </div>
                     <div class="imagen-port js-tilt">
-                        <img src="img/img5.jpg" alt="">
+                        <img src="{% static 'core/img/img5.jpg' %}" alt="">
                         <!-- <div class="hover-galeria">
                             <img src="img/lupa.png" alt="">
                             <p>Nuestro trabajo</p>
                         </div> -->
                     </div>
                     <div class="imagen-port js-tilt">
-                        <img src="img/img6.jpg" alt="">
+                        <img src="{% static 'core/img/img6.jpg' %}" alt="">
                         <!-- <div class="hover-galeria">
                             <img src="img/lupa.png" alt="">
                             <p>Nuestro trabajo</p>
                         </div> -->
                     </div>
                     <div class="imagen-port js-tilt">
-                        <img src="img/img7.jpg" alt="">
+                        <img src="{% static 'core/img/img7.jpg' %}" alt="">
                         <!-- <div class="hover-galeria">
                             <img src="img/lupa.png" alt="">
                             <p>Nuestro trabajo</p>
                         </div> -->
                     </div>
                     <div class="imagen-port js-tilt">
-                        <img src="img/img8.jpg" alt="">
+                        <img src="{% static 'core/img/img8.jpg' %}" alt="">
                         <!-- <div class="hover-galeria">
                             <img src="img/lupa.png" alt="">
                             <p>Nuestro trabajo</p>
@@ -155,13 +157,13 @@
                 <h2 class="titulo">Nuestros servicios</h2>
                 <div class="servicio-cont">
                     <div class="servicio-ind">
-                        <img src="img/Macetero Biodegradable Actual Terracota.webp" alt="">
+                        <img src="{% static 'core/img/Macetero Biodegradable Actual Terracota.webp' %}" alt="">
                         <h3>Macetero Biodegradable Actual Terracota</h3>
                         <p>Macetero de bamboo y resina biodegradable, perfectos para decorar tus proyectos de
                             jardinería sin contaminar. </p>
                     </div>
                     <div class="servicio-ind">
-                        <img src="img/tierra de hojas.webp" alt="">
+                        <img src="{% static 'core/img/tierra de hojas.webp' %}" alt="">
                         <h3>Tierra de hoja para jardín</h3>
                         <p>Características de la tierra de hojas 80 litros Anasac: Esta tierra es desinfectada, posee un
                             gran contenido de materia orgánica y una alta densidad. Es indicada para su uso en prados,
@@ -169,13 +171,13 @@
                         </p>
                     </div>
                     <div class="servicio-ind">
-                        <img src="img/flores.jpg" alt="">
+                        <img src="{% static 'core/img/flores.jpg' %}" alt="">
                         <h3>Bouquet de 15 RosasName</h3>
                         <p>Sorprendente Ramo con 15 Rosas Ecuatorianas en un tono, envuelto en un combinado papel y
                             cinta de organza.</p>
                     </div>
                     <div class="servicio-ind">
-                        <img src="img/arbustos.png" alt="">
+                        <img src="{% static 'core/img/arbustos.jpg' %}" alt="">
                         <h3>Boj bola 0,30 m</h3>
                         <p>el Boj Bola de Viveros Los Boldos es una muy buena alternativa. Es un arbusto ornamental que
                             se desarrolla bien en condiciones secas y en invierno tolera temperaturas entre los 3° y
@@ -218,8 +220,8 @@
     <script src="https://unpkg.com/tilt.js@1.2.1/dest/tilt.jquery.min.js"></script>
     <script src="https://unpkg.com/js-image-zoom/js-image-zoom.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-image-zoom/js-image-zoom.min.js"></script>
-    <script src="./js/jquery.elevateZoom-3.0.8.min.js"></script>
-    <script src="./js/index.js"></script>
+    <script src="{% static 'core/js/jquery.elevateZoom-3.0.8.min.js' %} "></script>
+    <script src="{% static 'core/js/index.js' %}"></script>
 
 </body>
 
