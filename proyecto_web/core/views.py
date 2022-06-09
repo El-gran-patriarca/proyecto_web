@@ -17,3 +17,7 @@ def ingresarRegistro(request):
 def ingresar(request):
 
     return render(request, 'core/ingresar.html')
+    
+def clima(request):
+
+    return render(request, 'core/clima.html')
