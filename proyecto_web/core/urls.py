@@ -1,13 +1,15 @@
 from django.urls import path
-from .views import home, ingresar, carrito, ingresarRegistro, clima, growAdmin, from_plantas
+from .views import home, ingresar, carrito, ingresarRegistro, clima, growAdmin, formPlantas, formModPlantas,formDelPlantas
 
 urlpatterns = [
     path('', home, name="home"),
     path('ingresar', ingresar, name="ingresar"),
     path('carrito', carrito, name="carrito"),
     path('clima', clima, name="clima"),
-    path('grow-admin', growAdmin, name="grow-admin"),
-    path('from_plantas', from_plantas, name="from_plantas"),
+    path('grow_admin', growAdmin, name="grow_admin"),
+    path('form_plantas', formPlantas, name="form_plantas"),
+    path('form_mod_plantas/<id>', formModPlantas, name="form_mod_plantas"),
+    path('form_del_plantas/<id>', formDelPlantas, name="form_del_plantas"),
     path('ingresarRegistro', ingresarRegistro, name="ingresarRegistro")
 ]
 

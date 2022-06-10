@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 from .models import Plantas
-from .forms import GrowForm
+from .forms import PlantasForm
 
 # Create your views here.
 
@@ -31,15 +31,15 @@ def growAdmin(request):
     datos ={
         'plantas' : plantas
     }
-    return render(request, 'core/grow-admin.html' , datos)
+    return render(request, 'core/grow_admin.html' , datos)
 
-def from_plantas(request):
+def formPlantas(request):
     datos = {
-        'form': GrowForm()
+        'form': PlantasForm()
     }
     
     if request.method == 'POST':
-        formulario = GrowForm(request.POST)
+        formulario = PlantasForm(request.POST)
         
         if formulario.is_valid:
             formulario.save()
@@ -47,4 +47,31 @@ def from_plantas(request):
         else:
             datos['message'] = 'Hubo un problema'
     
-    return render(request, 'core/form_plantas.html', datos)
+    return render(request, 'core/form_plantas.html', datos) 
+
+def formModPlantas(request , id):
+    
+    plantas = Plantas.objects.get(idPlanta= id)
+
+    datos = {
+        'form' : PlantasForm (instance= plantas)
+    }
+
+    if request.method == 'POST':
+
+        formulario = PlantasForm(data=request.POST, instance=plantas)
+    
+        if formulario.is_valid:
+
+            formulario.save()
+
+            datos['mensaje'] = "Modificados correctamente"
+    
+    return render(request, 'core/form_mod_plantas.html', datos)
+
+def formDelPlantas(request, id):
+
+    plantas = Plantas.objects.get(idPlanta=id)
+
+    plantas.delete()
+    return redirect(to ="grow_admin")
