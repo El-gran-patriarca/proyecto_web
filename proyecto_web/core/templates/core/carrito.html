@@ -1,5 +1,7 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="es">
+<html >
 
 
 <head>
@@ -10,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CARRITO</title>
     <link rel="shortcut icon" href="{% static 'core/img/icono.png' %}" type="image/x-icon">
-    <link rel="stylesheet" href="{% static 'core/static/css/estilos.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
     <!--barra de navegacion-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -24,7 +26,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active h4" aria-current="page" href="{% static 'core/index.html'%}">Inicio</a>
+                        <a class="nav-link active h4" aria-current="page" href="/">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"></a>
@@ -44,8 +46,8 @@
 <body>
     <header>
         <nav>
-            <a href="{% static 'core/ingresar.html'%}">Ingresar</a>
-            <a href="{% static 'core/carrito.html'%}" class="btn-carrito">
+            <a href="/ingresar">Ingresar</a>
+            <a href="/carrito" class="btn-carrito">
                 <img src="{% static 'core/img/carretilla.png' %}" alt="" class="carrito" height="50px" width="50px " />
             </a>
 
