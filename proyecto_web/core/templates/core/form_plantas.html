@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+<body>
+<div class ="row">
+    <h1>Crear planta</h1>
+</div>   
+<div >
+    <form method="post" action = "" id = "plantasform">
+        {% csrf_token %}
+    <div class = "form-group">
+        {{form.as_table}}
+    </div>
+
+    <input type="submit" class ="btn btn-danger" id = "enviar" value = "Enviar">
+    <input type="reset" class ="btn btn-primary" id = "limpiar" value = "Limpiar">
+    <div id="error" class="alert alert-danger" role="alert"></div>
+    </form>
+    <div class = "alert alert-success" role = "alert">
+        {{ message }}
+    </div>
+</div>
+<div>
+    <a href="/grow_admin">Volver</a><br>  
+</div> 
+</body>
+
+</html>
