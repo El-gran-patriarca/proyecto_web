@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+<body>
+<div class ="row">
+    <h1>Listado de palantas</h1>
+</div>
+<div class="row">
+<table border=1>
+    <tr><td>Id Planta</td><td>Tipo Planta</td><td>Nombre Planta</td><td>Categoria</td></tr>
+    {% for pla in plantas%}
+    <tr><td>{{pla.idPlanta}}</td><td>{{pla.tipoPlanta}}</td><td>{{pla.nombrePlanta}}</td><td>{{pla.categoria}}</td></tr>
+    {% endfor %}    
+</table>
+</div>
+<div>
+<a href="/from_plantas">Actualizacion</a> 
+</div> 
+</body>
+
+</html>
