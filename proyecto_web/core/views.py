@@ -25,6 +25,10 @@ def clima(request):
 
     return render(request, 'core/clima.html')
 
+def perfilUsuario(request):
+
+    return render(request, 'core/perfil_usuario.html')    
+
 def growAdmin(request):
 
     plantas = Plantas.objects.all()
