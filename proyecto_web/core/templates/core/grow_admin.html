@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+<body>
+<div class ="row">
+    <h1>Listado de plantas</h1>
+</div>
+<div class="row">
+<table border=1>
+    <tr><td>Id Planta</td><td>Tipo Planta</td><td>Nombre Planta</td><td>Categoria</td><td>opciones</td></tr>
+    {% for pla in plantas%}
+    <tr><td>{{pla.idPlanta}}</td><td>{{pla.tipoPlanta}}</td><td>{{pla.nombrePlanta}}</td><td>{{pla.categoria}}</td>
+    <td><a href = "{% url 'form_mod_plantas' pla.idPlanta %}">Modificar</td>
+    <td><a href = "{% url 'form_del_plantas' pla.idPlanta %}">Eliminar</td>
+    </tr>
+
+    {% endfor %}    
+</table>
+</div>
+<div>
+<a href="/form_plantas">Agregar</a><br>  
+</div> 
+</body>
+
+</html>
