@@ -1,6 +1,7 @@
 from django.shortcuts import render , redirect
 from .models import Plantas
 from .forms import PlantasForm
+import requests
 
 # Create your views here.
 
