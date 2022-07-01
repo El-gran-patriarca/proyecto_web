@@ -1,6 +1,5 @@
 from django.shortcuts import render , redirect
-from .models import Plantas
-from .forms import PlantasForm
+from .models import Plantas, Usuario 
 from django.contrib.auth.forms import UserCreationForm
 import requests
 from rest_framework import status
@@ -71,6 +70,16 @@ def growAdmin(request):
         'plantas' : plantas
     }
     return render(request, 'core/grow_admin.html' , datos)
+
+
+def registro(request):
+
+    usuario = Usuario.objects.all()
+
+    datos ={
+        'usuario' : usuario
+    }
+    return render(request, 'core/ingresar-registro.html' , datos)
 
 def formPlantas(request):
     datos = {
