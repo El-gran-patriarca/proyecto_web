@@ -39,6 +39,8 @@ def perfilUsuario(request):
     }
     return render(request, 'core/perfil_usuario.html' , datos)    
 
+    
+
 def growAdmin(request):
 
     plantas = Plantas.objects.all()
@@ -101,3 +103,4 @@ def register_page(request):
         'register_form' : register_form
 
     })
+
