@@ -38,7 +38,7 @@ def ingresar(request):
         if response.status_code == status.HTTP_200_OK:
             
             resultado = response.json()
-            return render(request, 'core/index.html')
+            return render(request, 'core/vista_usuario.html')
         
         datos['message'] = response.json()
 
@@ -87,6 +87,10 @@ def formPlantas(request):
             datos['message'] = 'Hubo un problema'
     
     return render(request, 'core/form_plantas.html', datos) 
+
+def usuario(request):
+
+    return render(request, 'core/vista_usuario.html')    
 
 def formModPlantas(request , id):
     
