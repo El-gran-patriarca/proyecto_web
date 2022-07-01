@@ -63,71 +63,42 @@
                 <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
                     style="stroke: none; fill: rgb(5, 114, 14);"></path>
             </svg></div>
+
     </header>
-    <div class="container">
+
+
+    
+    
+    <!-- Page Content -->
+    <div class="container mb-4">
+        <a href="/"><h2>Volver</h2></a>
+        {% for planta in plantas %}  
+        <!-- Portfolio Item Heading -->
+        <h1 class="my-4"> {{planta.nombrePlanta}}</h1>
+
+        <!-- Portfolio Item Row -->
         <div class="row">
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                <div class="card border-0 shadow rounded-3 my-5">
-                    <div class="card-body p-4 p-sm-5">
-                        <h5 class="card-title text-center mb-5 fw-light fs-5">Ingresa tus datos</h5>
-                        <form name="joinus" id="joinus">
-                            <div class="form-floating mb-3">
-                                <input type="email" class="form-control" name="email" id="joinusEmail"
-                                    placeholder="Correo" tabIndex="1" required>
-                                <label for="joinusEmail">Hola@correo.com</label>
-                                <div class="alert alert-danger d-none" role="alert" name="joinusEmailAlert">
-                                    Debes rellenar el Correo
-                                </div>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="password" class="form-control" name="password" id="joinusPassword"
-                                    placeholder="Password" tabIndex="2" required>
-                                <label for="joinusPassword">Contraseña</label>
-                                <div class="alert alert-danger d-none" role="alert" name="joinusPasswordAlert">
-                                    Debes rellenar la Contraseña
-                                </div>
-                            </div>
 
-                            <div class="form-check mb-3">
-                                <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
-                                <label class="form-check-label" for="rememberPasswordCheck">
-                                    Recordar contraseña
-                                </label>
-                            </div>
-                            <div class="d-grid">
-                                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit" tabIndex="3">Iniciar
-                                    sesión</button>
-                            </div>
-                            <hr class="my-4">
-                            <div class="d-grid mb-2">
-                                <button class="btn btn-google btn-login text-uppercase fw-bold" type="submit">
-                                    <a href="/ingresarRegistro">
-                                        <i class="fab fa-google me-2"></i> No estas registrado?
-                                </button>
-                            </div>
-                            <div class="d-grid">
-                                <button class="btn btn-facebook btn-login text-uppercase fw-bold" type="submit">
-                                    <i class="fab fa-facebook-f me-2"></i> Olvidaste tu contraseña?
-                                </button>    
-                            </div>
-                        </form> 
-                            <hr class="my-4">  
-                            <div class="d-grid">
-                                <button class="btn btn-facebook btn-login text-uppercase fw-bold" type="submit">
-                                    <a href="/grow_admin">
-                                        <i class="fab fa-facebook-f me-2"></i> Ingreso como administrador
-                                </button>
-                            </div>    
-                    </div>
-                </div>
+            <div class="col-md-6">
+                <img class="img-fluid" src="{{planta.imagenPlanta}}" alt="">
             </div>
+
+            <div class="col-md-6">
+                <h2 class="my-3">${{planta.costoPlanta}}</h2>
+                <p></p>
+                <h3 class="my-3">Características</h3>
+                <ul>
+                    <li>{{planta.tipoPlanta}}</li>
+                    <li>{{planta.categoria}}</li>
+
+                </ul>
+            </div>
+
         </div>
+        {% endfor %} 
     </div>
-    <nav>
-        
 
 
-    </nav>
     <footer>
         <div class="contenedor-footer">
             <div class="content-foo">

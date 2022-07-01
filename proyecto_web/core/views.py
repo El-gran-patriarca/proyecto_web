@@ -1,6 +1,8 @@
 from django.shortcuts import render , redirect
 from .models import Plantas
 from .forms import PlantasForm
+from django.contrib.auth.forms import UserCreationForm
+import requests
 
 # Create your views here.
 
@@ -23,6 +25,19 @@ def ingresar(request):
 def clima(request):
 
     return render(request, 'core/clima.html')
+
+def perfilUsuario(request):
+    #http://127.0.0.1:8000/api/lista_plantas
+    endpoint = 'http://127.0.0.1:8000/api/lista_plantas'
+    url = endpoint.format(idPlanta=3)
+
+    response = requests.get(endpoint)
+    resultado = response.json()
+
+    datos ={
+        'plantas' : resultado
+    }
+    return render(request, 'core/perfil_usuario.html' , datos)    
 
 def growAdmin(request):
 
@@ -75,3 +90,14 @@ def formDelPlantas(request, id):
 
     plantas.delete()
     return redirect(to ="grow_admin")
+
+   
+def register_page(request):
+
+    register_form = UserCreationForm()
+
+    return render(request, 'core/ingresar.html',{  
+        'title' : 'Registro',
+        'register_form' : register_form
+
+    })
