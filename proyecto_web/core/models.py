@@ -23,3 +23,10 @@ class Plantas(models.Model):
     
     def __str__(self):
         return str(self.idPlanta)
+#Modelo para usuario
+class Usuario(models.Model):
+    Usuario = models.CharField(max_length=20 ,primary_key=True ,verbose_name='User')
+    contraseña = models.CharField(max_length=10 ,verbose_name='Contraseña')
+    
+    def __str__(self):
+        return str(self.Usuario)

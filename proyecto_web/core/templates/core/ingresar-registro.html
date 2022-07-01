@@ -66,55 +66,32 @@
                     style="stroke: none; fill: rgb(5, 114, 14);"></path>
             </svg></div>
     </header>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                <div class="card border-0 shadow rounded-3 my-5">
-                    <div class="card-body p-4 p-sm-5">
-                        <h5 class="card-title text-center mb-5 fw-light fs-5">Crear cuenta</h5>
-                        <form name="joinus" id="joinus">
-                            <div class="form-floating mb-3">
-                                <input class="form-control" type="text" placeholder="Ej: Francisco" name="name"
-                                    id="joinusName" tabIndex="1" required>
-                                <label for="joinusName">Nombre</label>
-                                <div class="alert alert-danger d-none" role="alert" name="joinusNameAlert">
-                                    Debes rellenar el nombre
+    <div >
+        <div >
+            <div >
+                <div >
+                    <div >
+                        <h5 >Crear cuenta</h5>
+                        
+                            <div class="row">
+                                <form method="post" action="" id="formualario">
+                                    {% csrf_token %}
+                                   <div class="form-group">
+                                    {{ form.as_table}}
+                                   </div> 
+
+                                   <input type="submit" class ="btn btn-danger" id = "enviar" value = "Modificar">
+                                   <input type="reset" class ="btn btn-primary" id = "limpiar" value = "Limpiar">
+                                   <div id="error" class="alert alert-danger" role="alert"></div>
+                                </form> 
+                                <div class = "alert alert-success" role = "alert">
+                                    {{ message }}
+                                </div>
+                                <div>
+                                    <a href="/grow_admin">Volver</a><br>
                                 </div>
                             </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" name="apellido" id="joinusApellido" placeholder="Ej: Francisco" tabIndex="2" required>
-                                <label for="joinusApellido">Apellido</label>
-                                <div class="alert alert-danger d-none" role="alert" name="joinusApellidoAlert">
-                                    Debes rellenar el Apellido
-                                </div>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="email" class="form-control" name="email" id="joinusEmail"
-                                    placeholder="Correo" tabIndex="3" required>
-                                <label for="joinusEmail">Hola@correo.com</label>
-                                <div class="alert alert-danger d-none" role="alert" name="joinusEmailAlert">
-                                    Debes rellenar el Correo
-                                </div>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="password" class="form-control" name="password" id="joinusPassword"
-                                    placeholder="Password" tabIndex="4" required>
-                                <label for="joinusPassword">Contraseña</label>
-                                <div class="alert alert-danger d-none" role="alert" name="joinusPasswordAlert">
-                                    Debes rellenar la Contraseña
-                                </div>
-                            </div>
-                            <div class="d-grid">
-                                <button id="bnt-aceptar" class="btn btn-primary btn-login text-uppercase fw-bold"
-                                    type="submit">Aceptar</button>                                    
-                            </div>
-                            <div class="d-grid mb-2">
-                                <button id="bnt-volver" class="btn btn-google btn-login text-uppercase fw-bold" type="submit">
-                                    <a href="/ingresar">
-                                        <i class="fab fa-google me-2"></i> Volver
-                                </button>
-                            </div>
-                        </form>
+                        
                     </div>
                 </div>
             </div>
