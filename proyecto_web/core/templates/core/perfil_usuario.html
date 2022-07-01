@@ -63,96 +63,62 @@
                 <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
                     style="stroke: none; fill: rgb(5, 114, 14);"></path>
             </svg></div>
-        <div class="container">
 
-            <!-- Page Content -->
-            <div class="container">
+    </header>
 
-                <!-- Portfolio Item Heading -->
-                <h1 class="my-4">Page Heading
-                    <small>Secondary Text</small>
-                </h1>
 
-                <!-- Portfolio Item Row -->
-                <div class="row">
+    
+    
+    <!-- Page Content -->
+    <div class="container mb-4">
+        <a href="/"><h2>Volver</h2></a>
+        {% for planta in plantas %}  
+        <!-- Portfolio Item Heading -->
+        <h1 class="my-4"> {{planta.nombrePlanta}}</h1>
 
-                    <div class="col-md-8">
-                        <img class="img-fluid" src="https://via.placeholder.com/750x500" alt="">
-                    </div>
+        <!-- Portfolio Item Row -->
+        <div class="row">
 
-                    <div class="col-md-4">
-                        <h3 class="my-3">Project Description</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida
-                            pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec
-                            metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-                        <h3 class="my-3">Project Details</h3>
-                        <ul>
-                            <li>Lorem Ipsum</li>
-                            <li>Dolor Sit Amet</li>
-                            <li>Consectetur</li>
-                            <li>Adipiscing Elit</li>
-                        </ul>
-                    </div>
-
-                </div>
-                <!-- /.row -->
-
-                <!-- Related Projects Row -->
-                <h3 class="my-4">Related Projects</h3>
-
-                <div class="row">
-
-                    <div class="col-md-3 col-sm-6 mb-4">
-                        <a href="#">
-                            <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
-                        </a>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 mb-4">
-                        <a href="#">
-                            <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
-                        </a>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 mb-4">
-                        <a href="#">
-                            <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
-                        </a>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 mb-4">
-                        <a href="#">
-                            <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
-                        </a>
-                    </div>
-
-                </div>
-                <!-- /.row -->
-
+            <div class="col-md-6">
+                <img class="img-fluid" src="{{planta.imagenPlanta}}" alt="">
             </div>
-            <!-- /.container -->
 
-            </nav>
-            <footer>
-                <div class="contenedor-footer">
-                    <div class="content-foo">
-                        <h4>telefono</h4>
-                        <p>21414124</p>
-                    </div>
-                    <div class="content-foo">
-                        <h4>correo</h4>
-                        <p>grow.jardineria@gmail.com</p>
-                    </div>
-                    <div class="content-foo">
-                        <h4>ubicacion</h4>
-                        <p>Santiago centro</p>
-                    </div>
-                </div>
-                <h2 class="titulo-final"></h2>
-            </footer>
-            <script src="https://code.jquery.com/jquery-3.6.0.js"
-                integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-            <script src="{% static 'core/js/ingresar.js' %}"></script>
+            <div class="col-md-6">
+                <h2 class="my-3">${{planta.costoPlanta}}</h2>
+                <p></p>
+                <h3 class="my-3">Características</h3>
+                <ul>
+                    <li>{{planta.tipoPlanta}}</li>
+                    <li>{{planta.categoria}}</li>
+
+                </ul>
+            </div>
+
+        </div>
+        {% endfor %} 
+    </div>
+
+
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>telefono</h4>
+                <p>21414124</p>
+            </div>
+            <div class="content-foo">
+                <h4>correo</h4>
+                <p>grow.jardineria@gmail.com</p>
+            </div>
+            <div class="content-foo">
+                <h4>ubicacion</h4>
+                <p>Santiago centro</p>
+            </div>
+        </div>
+        <h2 class="titulo-final"></h2>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="{% static 'core/js/ingresar.js' %}"></script>
 
 </body>
 
