@@ -8,9 +8,10 @@
 <body>
 <div class ="row">
     <h1>Listado de plantas</h1>
+    
 </div>
 <div class="row">
-<table border=1>
+<table border= '1'>
     <tr><td>Id Planta</td><td>Tipo Planta</td><td>Nombre Planta</td><td>Categoria</td><td>opciones</td></tr>
     {% for pla in plantas%}
     <tr><td>{{pla.idPlanta}}</td><td>{{pla.tipoPlanta}}</td><td>{{pla.nombrePlanta}}</td><td>{{pla.categoria}}</td>
@@ -24,6 +25,9 @@
 <div>
 <a href="/form_plantas">Agregar</a><br>  
 </div> 
+<div>
+    <a href="/">Inicio</a><br>  
+    </div> 
 </body>
 
 </html>
