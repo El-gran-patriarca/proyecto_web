@@ -37,7 +37,7 @@ $(document).ready(function () {
 
     $('#joinus').submit(function (event) {
         console.log("Formulario enviado")
-        event.preventDefault();
+        //event.preventDefault();
     });
 
 });        
