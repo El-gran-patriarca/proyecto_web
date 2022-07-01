@@ -2,6 +2,7 @@ from django.shortcuts import render , redirect
 from .models import Plantas, Usuario 
 from django.contrib.auth.forms import UserCreationForm
 import requests
+from rest_framework import status
 
 # Create your views here.
 
@@ -18,8 +19,29 @@ def ingresarRegistro(request):
     return render(request, 'core/ingresar-registro.html')    
 
 def ingresar(request):
+    datos = {}
+    if request.method == 'POST':
+        username = request.POST.get('joinusUser')
+        password = request.POST.get('joinusPassword')
 
-    return render(request, 'core/ingresar.html')
+        jsonPost = {
+            "username": username,
+            "password": password
+        }
+
+        endpoint = 'http://127.0.0.1:8000/api/login'#?user={username}&passw={password}
+        url = endpoint.format(username=username, password=password)
+        print('ingreso print')
+        response = requests.post(endpoint, json=jsonPost)
+        print(response.json())
+        if response.status_code == status.HTTP_200_OK:
+            
+            resultado = response.json()
+            return render(request, 'core/vista_usuario.html')
+        
+        datos['message'] = response.json()
+
+    return render(request, 'core/ingresar.html', datos)
     
 def clima(request):
 
@@ -38,7 +60,7 @@ def perfilUsuario(request):
     }
     return render(request, 'core/perfil_usuario.html' , datos)    
 
-    
+
 
 def growAdmin(request):
 
@@ -75,6 +97,10 @@ def formPlantas(request):
     
     return render(request, 'core/form_plantas.html', datos) 
 
+def usuario(request):
+
+    return render(request, 'core/vista_usuario.html')    
+
 def formModPlantas(request , id):
     
     plantas = Plantas.objects.get(idPlanta= id)
@@ -103,13 +129,5 @@ def formDelPlantas(request, id):
     return redirect(to ="grow_admin")
 
    
-def register_page(request):
 
-    register_form = UserCreationForm()
-
-    return render(request, 'core/ingresar.html',{  
-        'title' : 'Registro',
-        'register_form' : register_form
-
-    })
 
