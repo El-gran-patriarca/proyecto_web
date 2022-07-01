@@ -1,7 +1,9 @@
 from django.shortcuts import render , redirect
 from .models import Plantas
 from .forms import PlantasForm
+from django.contrib.auth.forms import UserCreationForm
 import requests
+from rest_framework import status
 
 # Create your views here.
 
@@ -18,16 +20,48 @@ def ingresarRegistro(request):
     return render(request, 'core/ingresar-registro.html')    
 
 def ingresar(request):
+    datos = {}
+    if request.method == 'POST':
+        username = request.POST.get('joinusUser')
+        password = request.POST.get('joinusPassword')
 
-    return render(request, 'core/ingresar.html')
+        jsonPost = {
+            "username": username,
+            "password": password
+        }
+
+        endpoint = 'http://127.0.0.1:8000/api/login'#?user={username}&passw={password}
+        url = endpoint.format(username=username, password=password)
+        print('ingreso print')
+        response = requests.post(endpoint, json=jsonPost)
+        print(response.json())
+        if response.status_code == status.HTTP_200_OK:
+            
+            resultado = response.json()
+            return render(request, 'core/vista_usuario.html')
+        
+        datos['message'] = response.json()
+
+    return render(request, 'core/ingresar.html', datos)
     
 def clima(request):
 
     return render(request, 'core/clima.html')
 
 def perfilUsuario(request):
+    #http://127.0.0.1:8000/api/lista_plantas
+    endpoint = 'http://127.0.0.1:8000/api/lista_plantas'
+    url = endpoint.format(idPlanta=3)
 
-    return render(request, 'core/perfil_usuario.html')    
+    response = requests.get(endpoint)
+    resultado = response.json()
+
+    datos ={
+        'plantas' : resultado
+    }
+    return render(request, 'core/perfil_usuario.html' , datos)    
+
+
 
 def growAdmin(request):
 
@@ -53,6 +87,10 @@ def formPlantas(request):
             datos['message'] = 'Hubo un problema'
     
     return render(request, 'core/form_plantas.html', datos) 
+
+def usuario(request):
+
+    return render(request, 'core/vista_usuario.html')    
 
 def formModPlantas(request , id):
     
@@ -80,3 +118,7 @@ def formDelPlantas(request, id):
 
     plantas.delete()
     return redirect(to ="grow_admin")
+
+   
+
+

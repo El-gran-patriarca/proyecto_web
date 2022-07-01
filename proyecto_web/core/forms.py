@@ -8,4 +8,4 @@ class PlantasForm(ModelForm):
 
     class Meta:
         model = Plantas
-        fields = ['idPlanta','tipoPlanta','nombrePlanta','categoria']
+        fields = ['idPlanta','tipoPlanta','nombrePlanta','imagenPlanta','costoPlanta','categoria']

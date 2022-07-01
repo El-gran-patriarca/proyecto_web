@@ -1,3 +1,4 @@
+from contextlib import nullcontext
 from django.db import models
 
 # Create your models here.
@@ -16,6 +17,8 @@ class Plantas(models.Model):
     idPlanta = models.IntegerField(primary_key=True ,verbose_name='id planta')
     tipoPlanta = models.CharField(max_length=20 , verbose_name='Tipo de planta')
     nombrePlanta = models.CharField(max_length=50 , verbose_name= 'Nombre planta')
+    imagenPlanta = models.CharField(max_length=150 , verbose_name= 'Imagen Planta', null=True)
+    costoPlanta = models.IntegerField(max_length=50 , verbose_name= 'Costo planta', null=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     
     def __str__(self):
